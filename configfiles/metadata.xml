@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><Entities>
+  <ExtensionPackages>
+    <ExtensionPackage 
+            name="WorkaroundsExtension" 
+            description="Some tools to workaround ThingWorx limitations introduced by R_D, by fault 'bug' or by wrong design criteria." 
+            vendor="" 
+            packageVersion="0.1.5" 
+            minimumThingWorxVersion="8.4.9">
+      <JarResources>
+        <FileResource type="JAR" file="WorkaroundsExtension.jar"/>
+      </JarResources>
+    </ExtensionPackage>
+  </ExtensionPackages>
+
+  <Resources>
+	    <Resource name="WorkaroundServices" 
+	    				description="Some tools to workaround ThingWorx limitations introduced by R_D, by fault 'bug' or by wrong design criteria." 
+	    				className="com.wup.WorkaroundServices" 
+	    				aspect.isCreatable="false" 
+	    				aspect.isExtensible="false">
+			<JarResources>
+				<FileResource type="JAR" file="WorkaroundsExtension.jar" description="WiseUp WorkaroundsExtension ThingPackage JAR" />
+			</JarResources>
+	      <RunTimePermissions>
+	        <Permissions resourceName="*">
+	          <ServiceInvoke>
+	            <Principal isPermitted="true" principalName="Administrators" type="Group" />
+	            <Principal isPermitted="true" principalName="Developers" type="Group" />
+	            <Principal isPermitted="true" principalName="Users" type="Group" />
+	          </ServiceInvoke>
+	        </Permissions>
+	      </RunTimePermissions>
+	    </Resource>
+	</Resources>
+</Entities>
